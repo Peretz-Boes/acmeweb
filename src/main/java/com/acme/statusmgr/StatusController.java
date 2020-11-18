@@ -34,7 +34,7 @@ public class StatusController {
 
     
     @RequestMapping("/status")
-    public ServerStatus greeting(@RequestParam(value="name", defaultValue="Anonymous") String name) {
+    public ServerStatus getCurrentServerStatus(@RequestParam(value="name", defaultValue="Anonymous") String name,@RequestParam List<String> details) {
         return new ServerStatus(counter.incrementAndGet(),
                             String.format(template, name));
     }
